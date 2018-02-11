@@ -383,4 +383,14 @@
     
     
 }
+
+- (void)request:(SKRequest *)request didFailWithError:(NSError *)error
+{
+    self.request = nil;
+    
+    if(_requestProductsBlock) {
+        _requestProductsBlock (request,nil);
+    }
+}
+
 @end
